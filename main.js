@@ -4,7 +4,43 @@
 //3. 없으면 챈스가 깍이고 행맨을 그림
 //4. 챈스 0이면 끝남
 //5. 글씨 맞추면 추카
-
+let alphabets = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
+let selectedList = [];
+let context, myStickman;
+let buttonHTML = alphabets
+  .map(
+    (item) =>
+      `<button class="btn btn-warning space" id="${item}" onclick="selectAlphabet('${item}')">${item.toUpperCase()}</button>`
+  )
+  .join("");
+document.getElementById("buttonArea").innerHTML = buttonHTML;
 function drawHackman() {
   drawArray[count]();
 }
@@ -53,7 +89,27 @@ head = function () {
   context.stroke();
 };
 let round = 0;
-let wordList = ["alien", "avengers", "titanic"];
+let wordList = [
+  "alien",
+  "avengers",
+  "titanic",
+  "matrix",
+  "memento",
+  "pianist",
+  "aquaman",
+  "annabelle",
+  "deadpool",
+  "jumanji",
+  "spiderman",
+  "frozen",
+  "shrek",
+  "notebook",
+  "avatar",
+  "mulan",
+  "godfather",
+  "leon",
+  "psycho",
+];
 let word = wordList[round];
 let answer = [];
 let drawArray = [
@@ -70,6 +126,7 @@ let drawArray = [
 ];
 let correct = 0;
 let count = 10;
+let gameover = false;
 function render() {
   document.getElementById("alphabet").innerHTML = word
     .split("")
@@ -78,8 +135,12 @@ function render() {
 }
 
 function selectAlphabet(char) {
+  if (gameover) {
+    return;
+  }
   let correct = 0;
-  //document.getElementById(char).disabled = true;
+  document.getElementById(char).disabled = true;
+  selectedList.push(char);
   let wordArray = word.split("");
   if (wordArray.includes(char)) {
     answer.push(char);
@@ -102,6 +163,7 @@ function selectAlphabet(char) {
     drawHackman();
     if (count <= 0) {
       document.getElementById("resultArea").innerHTML = "GAME OVER";
+      gameover = true;
       return;
     }
   }
@@ -111,9 +173,16 @@ function reset() {
   round++;
   word = wordList[round];
   render();
+  answer = [];
   correct = 0;
-  count = 0;
+  count = 10;
+  selectedList.map(
+    (item) => (document.getElementById(`${item}`).disabled = false)
+  );
   document.getElementById("resultArea").innerHTML = "";
+  context.clearRect(0, 0, myStickman.width, myStickman.height);
+  canvas();
+  gameover = false;
 }
 
 draw = function ($pathFromx, $pathFromy, $pathTox, $pathToy) {
