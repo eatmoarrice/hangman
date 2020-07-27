@@ -1,0 +1,16 @@
+.letter {
+  width:100px;
+  height:100px;
+  border-bottom:5px solid yellowgreen;
+  margin-right:30px;
+  font-size: 50pt;
+  text-align: center;
+}
+#alphabet{
+  display: flex;
+}
+
+#resultArea{
+  font-size: 50pt;
+}
+
