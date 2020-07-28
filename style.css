@@ -1,18 +1,29 @@
 .letter {
-  width:100px;
-  height:100px;
-  border-bottom:5px solid yellowgreen;
-  margin-right:30px;
-  font-size: 50pt;
-  text-align: center;
+	width: 100px;
+	height: 100px;
+	border-bottom: 5px solid yellowgreen;
+	margin-right: 30px;
+	font-size: 50pt;
+	text-align: center;
 }
-#alphabet{
-  display: flex;
+#alphabet {
+	display: flex;
 }
 
-#resultArea{
-  font-size: 50pt;
+#resultArea {
+	font-size: 50pt;
 }
-.space{
-  margin-left:20px;
+.space {
+	margin-left: 20px;
+}
+
+#buttonArea > * {
+	margin: 10px;
+	width: 40px;
+}
+
+.btn:disabled {
+	background-color: rgb(63, 63, 63) !important;
+	border-color: rgb(85, 85, 85);
+	color: white;
 }
