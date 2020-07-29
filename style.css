@@ -28,6 +28,7 @@
 .grow {
 	background-image: url("img/stem.png");
 	background-size: contain;
+	z-index: 1;
 }
 
 .flower {
@@ -40,6 +41,7 @@
 	background-image: url("img/flower.png");
 	background-size: contain;
 	background-repeat: no-repeat;
+	z-index: 2;
 }
 
 .pot > img {
@@ -89,6 +91,7 @@
 }
 
 .title {
+	background-color: rgb(112, 215, 255);
 	font-family: "Ranchers", cursive;
 	text-transform: uppercase;
 	font-weight: 600;
