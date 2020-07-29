@@ -138,6 +138,7 @@ function reset() {
 	correct = 0;
 	count = 10;
 	selectedList.map((item) => (document.getElementById(`${item}`).disabled = false));
+	document.getElementById("teacher").src = "img/teacher.png";
 	document.getElementById("resultArea").innerHTML = "";
 	context.clearRect(0, 0, myStickman.width, myStickman.height);
 	canvas();
