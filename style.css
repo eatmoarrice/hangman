@@ -108,7 +108,12 @@
 	padding-bottom: 120px;
 	background-color: #ffffff;
 	background-image: url("img/pool-table.png");
-	/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+body {
+	background-color: #ffffff;
+	background-image: url("img/pool-table.png");
+	min-height: 100vh;
 }
 
 #teacher {
