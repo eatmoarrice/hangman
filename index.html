@@ -1,22 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container"></div>
-    <div class="wrapper">
-        <h1 class="text-center">Hangman</h1>
-        <div id="buttonArea" class="d-flex flex-wrap"></div>
-        <div id="alphabet" class="py-auto py-auto"></div>
-        <div id="resultArea"></div>
-        <canvas id="canvas"></div>
-        <button class="btn btn-success" onclick="reset()">Reset</button>
-    
-    <script src="main.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+			integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="">
+			<div class="wrapper">
+				<div id="wall">
+					<img id="teacher" class="d-none" src="img/teacher.png" alt="teacher" width="250px" />
+					<div class="d-flex justify-content-center w-100 align-items-center flex-column position-relative">
+						<h1 class="title">Hangman</h1>
+						<div class="d-flex justify-content-center w-100 flex-wrap">
+							<div class="d-flex flex-column align-items-center">
+								<img src="img/string.png" width="100px" />
+								<div id="buttonArea" class="d-flex flex-wrap justify-content-start"></div>
+							</div>
+							<div class="d-flex align-items-center justify-content-center flex-column ml-5">
+								<canvas id="canvas"></canvas>
+								<div id="resultArea"></div>
+							</div>
+						</div>
+						<div class="d-flex align-items-center"><button class="btn btn-success mb-3 reset" onclick="reset()">Reset</button></div>
+					</div>
+				</div>
+				<div class="d-flex justify-content-center w-100 align-items-center flex-column" id="floor">
+					<div id="alphabet" class="d-flex flex-wrap justify-content-center"></div>
+				</div>
+			</div>
+		</div>
+
+		<script src="main.js"></script>
+	</body>
 </html>
